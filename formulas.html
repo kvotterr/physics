@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Физика - Формулы</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        /* Стили для поиска */
+        .search-container {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            position: relative;
+        }
+        .search-input {
+            width: 100%;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: 2px solid #3a86ff;
+            border-radius: 50px;
+            outline: none;
+            transition: all 0.3s;
+            padding-left: 50px;
+        }
+        .search-input:focus {
+            box-shadow: 0 0 10px rgba(58, 134, 255, 0.3);
+        }
+        .search-icon {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #3a86ff;
+        }
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            font-size: 18px;
+            color: #6c757d;
+            display: none;
+        }
+        .formula-card.highlight {
+            background-color: rgba(58, 134, 255, 0.1);
+            border-left: 4px solid #3a86ff;
+        }
+        .quick-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        .quick-nav-btn {
+            padding: 8px 16px;
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .quick-nav-btn:hover {
+            background: #3a86ff;
+            color: white;
+            border-color: #3a86ff;
+        }
+    </style>
+</head>
+
+<!-- Кнопка "Наверх" -->
+<button id="backToTop" class="back-to-top" aria-label="Вернуться наверх">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-text">Физика</span>
+                <span class="logo-dot">.</span>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="scientists.html">Учёные</a></li>
+                    <li><a href="formulas.html" class="active">Формулы</a></li>
+                    <li><a href="terms.html">Термины</a></li>
+                    <li><a href="graphs.html">Графики</a></li>
+                    <li><a href="instruments.html">Приборы</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="hero-title">Физические формулы</h1>
+            <p class="hero-subtitle">Полный справочник формул по физике для 7-9 классов</p>
+        </div>
+        <div class="hero-particles" id="particles-js"></div>
+    </section>
+
+    <section class="formulas-content">
+        <div class="container">
+            <!-- Поиск -->
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="searchInput" class="search-input" placeholder="Поиск формул...">
+            </div>
+
+            <!-- Быстрая навигация -->
+            <div class="quick-nav">
+                <button class="quick-nav-btn" data-section="grade7">7 класс</button>
+                <button class="quick-nav-btn" data-section="grade8">8 класс</button>
+                <button class="quick-nav-btn" data-section="kinematics">9 класс (Кинематика)</button>
+                <button class="quick-nav-btn" data-section="dynamics">9 класс (Динамика)</button>
+                <button class="quick-nav-btn" data-section="conservation">9 класс (Законы сохранения)</button>
+                <button class="quick-nav-btn" data-section="magnetism">10 класс</button>
+                <button class="quick-nav-btn" data-section="quantum">11 класс</button>
+            </div>
+
+            <!-- Сообщение, если ничего не найдено -->
+            <div class="no-results" id="noResults">
+                Ничего не найдено. Попробуйте изменить запрос.
+            </div>
+
+            <!-- 7 класс -->
+            <div class="formula-section" id="grade7">
+                <h2>7 класс</h2>
+                <div class="formula-grid">
+                    <div class="formula-card">
+                        <h3>Путь</h3>
+                        <div class="formula">\[ S = vt \]</div>
+                        <p class="formula-description">S — путь (м)<br>v — скорость (м/с)<br>t — время (с)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Скорость</h3>
+                        <div class="formula">\[ v = \frac{S}{t} \]</div>
+                        <p class="formula-description">v — скорость (м/с)<br>S — путь (м)<br>t — время (с)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Плотность</h3>
+                        <div class="formula">\[ \rho = \frac{m}{V} \]</div>
+                        <p class="formula-description">ρ — плотность (кг/м³)<br>m — масса (кг)<br>V — объем (м³)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Масса</h3>
+                        <div class="formula">\[ m = V\rho \]</div>
+                        <p class="formula-description">m — масса (кг)<br>V — объем (м³)<br>ρ — плотность (кг/м³)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Сила упругости</h3>
+                        <div class="formula">\[ F = k\Delta l \]</div>
+                        <p class="formula-description">F — сила упругости (Н)<br>k — жесткость пружины (Н/м)<br>Δl — удлинение пружины (м)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Сила тяжести</h3>
+                        <div class="formula">\[ F = mg \]</div>
+                        <p class="formula-description">F — сила (Н)<br>m — масса (кг)<br>g — ускорение свободного падения (м/с²)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Давление</h3>
+                        <div class="formula">\[ P = \frac{F}{S} \]</div>
+                        <p class="formula-description">p — давление (Па)<br>F — сила (Н)<br>S — площадь (м²)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Давление столба жидкости</h3>
+                        <div class="formula">\[ P = \rho gh \]</div>
+                        <p class="formula-description">P — давление (Па)<br>ρ — плотность (кг/м³)<br>g — ускорение свободного падения (м/с²)<br>h — высота столба жидкости (м)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Сила Архимеда</h3>
+                        <div class="formula">\[ F = \rho gV \]</div>
+                        <p class="formula-description">F — сила Архимеда (Н)<br>ρ — плотность (кг/м³)<br>g — ускорение свободного падения (м/с²)<br>V — объем (м³)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Механическая работа</h3>
+                        <div class="formula">\[ A = FS \]</div>
+                        <p class="formula-description">A — работа (Дж)<br>F — сила (Н)<br>S — путь (м)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Мощность</h3>
+                        <div class="formula">\[ N = \frac{A}{t} \]</div>
+                        <p class="formula-description">N — мощность (Вт)<br>A — работа (Дж)<br>t — время (с)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Момент силы</h3>
+                        <div class="formula">\[ M = Fl \]</div>
+                        <p class="formula-description">M — момент силы (Н·м)<br>F — сила (Н)<br>l — плечо силы (м)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>КПД</h3>
+                        <div class="formula">\[ \eta = \frac{A_{п}}{A_{з}} \times 100\% \]</div>
+                        <p class="formula-description">η — КПД<br>A<sub>п</sub> — полезная работа (Дж)<br>A<sub>з</sub> — затраченная работа (Дж)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Потенциальная энергия</h3>
+                        <div class="formula">\[ E = mgh \]</div>
+                        <p class="formula-description">E — потенциальная энергия (Дж)<br>m — масса (кг)<br>g — ускорение свободного падения (м/с²)<br>h — высота (м)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Кинетическая энергия</h3>
+                        <div class="formula">\[ E = \frac{mv^{2}}{2} \]</div>
+                        <p class="formula-description">E — кинетическая энергия (Дж)<br>m — масса (кг)<br>v — скорость (м/с)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8 класс -->
+            <div class="formula-section" id="grade8">
+                <h2>8 класс</h2>
+                <div class="formula-grid">
+                    <div class="formula-card">
+                        <h3>Количество теплоты при нагревании/охлаждении</h3>
+                        <div class="formula">\[ Q = cm\Delta t \]</div>
+                        <p class="formula-description">Q — количество теплоты (Дж)<br>c — удельная теплоемкость (Дж/(кг·℃))<br>m — масса (кг)<br>Δt = (t<sub>2</sub> - t<sub>1</sub>) — разность температур (℃)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Количество теплоты при сгорании</h3>
+                        <div class="formula">\[ Q = qm \]</div>
+                        <p class="formula-description">Q — количество теплоты (Дж)<br>q — удельная теплота сгорания (Дж/кг)<br>m — масса (кг)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Количество теплоты при плавлении</h3>
+                        <div class="formula">\[ Q = \lambda m \]</div>
+                        <p class="formula-description">Q — количество теплоты (Дж)<br>λ — удельная теплота плавления (Дж/кг)<br>m — масса (кг)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Относительная влажность воздуха</h3>
+                        <div class="formula">\[ \varphi = \frac{\rho}{\rho_{0}} \times 100\% \]</div>
+                        <p class="formula-description">φ — относительная влажность воздуха<br>ρ — давление водяного пара (Па)<br>ρ<sub>0</sub> — давление насыщенного пара (Па)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Количество теплоты при парообразовании</h3>
+                        <div class="formula">\[ Q = Lm \]</div>
+                        <p class="formula-description">Q — количество теплоты (Дж)<br>L — удельная теплота парообразования (Дж/кг)<br>m — масса (кг)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>КПД теплового двигателя</h3>
+                        <div class="formula">\[ \eta = \frac{A_{п}}{Q_{н}} \times 100\% \]</div>
+                        <p class="formula-description">η — КПД<br>A<sub>п</sub> — полезная работа (Дж)<br>Q<sub>н</sub> — количество теплоты (Дж)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Полезная работа теплового двигателя</h3>
+                        <div class="formula">\[ A_{п} = Q_{н} - Q_{х} \]</div>
+                        <p class="formula-description">A<sub>п</sub> — полезная работа (Дж)<br>Q<sub>н</sub> — количество теплоты нагревателя (Дж)<br>Q<sub>х</sub> — количество теплоты холодильника (Дж)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Сила тока</h3>
+                        <div class="formula">\[ I = \frac{q}{t} \]</div>
+                        <p class="formula-description">I — сила тока (А)<br>q — электрический заряд (Кл)<br>t — время (с)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Напряжение</h3>
+                        <div class="formula">\[ U = \frac{A}{q} \]</div>
+                        <p class="formula-description">U — напряжение (В)<br>A — работа (Дж)<br>q — электрический заряд (Кл)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Сопротивление</h3>
+                        <div class="formula">\[ R = \frac{\rho l}{S} \]</div>
+                        <p class="formula-description">R — сопротивление (Ом)<br>ρ — удельное сопротивление (Ом·м)<br>l — длина проводника (м)<br>S — площадь сечения проводника (м²)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Последовательное соединение проводников</h3>
+                        <div class="formula">\[ U = U_1 + U_2 + \ldots \]</div>
+                        <div class="formula">\[ I = I_1 = I_2 = \ldots \]</div>
+                        <div class="formula">\[ R = R_1 + R_2 + \ldots \]</div>
+                        <p class="formula-description">R — общее сопротивление (Ом)<br>R<sub>n</sub> — сопротивление n-ого проводника (Ом)<br>I — сила тока (А)<br>I<sub>n</sub> — сила тока n-ого проводника (А)<br>U — полное напряжение (В)<br>U<sub>n</sub> — напряжение n-ого проводника (В)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Параллельное соединение проводников</h3>
+                        <div class="formula">\[ U = U_1 = U_2 = \ldots \]</div>
+                        <div class="formula">\[ I = I_1 + I_2 + \ldots \]</div>
+                        <div class="formula">\[ \frac{1}{R} = \frac{1}{R_1} + \frac{1}{R_2} + \ldots \]</div>
+                        <p class="formula-description">U — напряжение (В)<br>I — сила тока (А)<br>R — сопротивление (Ом)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Закон Ома для участка цепи</h3>
+                        <div class="formula">\[ I = \frac{U}{R} \]</div>
+                        <p class="formula-description">I — сила тока (А)<br>U — напряжение (В)<br>R — сопротивление (Ом)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Мощность электрического тока</h3>
+                        <div class="formula">\[ P = IU \]</div>
+                        <p class="formula-description">P — мощность электрического тока (Вт)<br>I — сила тока (А)<br>U — напряжение (В)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Закон Джоуля-Ленца</h3>
+                        <div class="formula">\[ Q = I^{2}Rt \]</div>
+                        <p class="formula-description">Q — количество теплоты (Дж)<br>I — сила тока (А)<br>R — сопротивление (Ом)<br>t — время (с)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Закон отражения света</h3>
+                        <div class="formula">\[ \alpha = \beta \]</div>
+                        <p class="formula-description">α — угол падения<br>β — угол отражения</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Закон преломления света</h3>
+                        <div class="formula">\[ \frac{\sin \alpha_1}{\sin \alpha_2} = \frac{n_2}{n_1} \]</div>
+                        <p class="formula-description">α<sub>1</sub> — угол падения<br>α<sub>2</sub> — угол преломления<br>n<sub>1</sub>, n<sub>2</sub> — показатели преломления сред</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Оптическая сила линзы</h3>
+                        <div class="formula">\[ D = \frac{1}{F} \]</div>
+                        <p class="formula-description">D — оптическая сила линзы (дптр)<br>F — фокусное расстояние (м)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 9 класс - Кинематика -->
+            <div class="formula-section" id="kinematics">
+                <h2>9 класс - Кинематика</h2>
+                <div class="formula-grid">
+                    <div class="formula-card">
+                        <h3>Ускорение</h3>
+                        <div class="formula">\[ a = \frac{v - v_0}{t} \]</div>
+                        <p class="formula-description">a — ускорение (м/с²)<br>v — конечная скорость (м/с)<br>v<sub>0</sub> — начальная скорость (м/с)<br>t — время (с)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Скорость при равноускоренном движении</h3>
+                        <div class="formula">\[ v = v_0 + at \]</div>
+                        <p class="formula-description">v — скорость (м/с)<br>v<sub>0</sub> — начальная скорость (м/с)<br>a — ускорение (м/с²)<br>t — время (с)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Перемещение при равноускоренном движении</h3>
+                        <div class="formula">\[ S = v_0t + \frac{at^2}{2} \]</div>
+                        <div class="formula">\[ S = \frac{v^2 - v_0^2}{2a} \]</div>
+                        <p class="formula-description">S — перемещение (м)<br>v — скорость (м/с)<br>v<sub>0</sub> — начальная скорость (м/с)<br>a — ускорение (м/с²)<br>t — время (с)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Координата тела</h3>
+                        <div class="formula">\[ x = x_0 + v_0t + \frac{at^2}{2} \]</div>
+                        <p class="formula-description">x — координата тела<br>x<sub>0</sub> — начальная координата<br>v<sub>0</sub> — начальная скорость (м/с)<br>a — ускорение (м/с²)<br>t — время (с)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Скорость при свободном падении</h3>
+                        <div class="formula">\[ v = gt \]</div>
+                        <p class="formula-description">v — скорость (м/с)<br>g = 10 м/с² — ускорение свободного падения<br>t — время (с)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Перемещение при свободном падении</h3>
+                        <div class="formula">\[ S = \frac{gt^2}{2} \]</div>
+                        <p class="formula-description">S — перемещение (м)<br>g = 10 м/с² — ускорение свободного падения<br>t — время (с)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Скорость тела, брошенного вертикально вверх</h3>
+                        <div class="formula">\[ v = v_0 - gt \]</div>
+                        <p class="formula-description">v — скорость (м/с)<br>v<sub>0</sub> — начальная скорость (м/с)<br>g = 10 м/с² — ускорение свободного падения<br>t — время (с)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Центростремительное ускорение</h3>
+                        <div class="formula">\[ a = \frac{v^2}{R} \]</div>
+                        <div class="formula">\[ a = \frac{4\pi^2R}{T^2} \]</div>
+                        <p class="formula-description">a — ускорение (м/с²)<br>v — скорость (м/с)<br>R — радиус окружности (м)<br>T — период (с)<br>π ≈ 3.14</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Скорость при движении по окружности</h3>
+                        <div class="formula">\[ v = \frac{2\pi R}{T} \]</div>
+                        <p class="formula-description">v — скорость (м/с)<br>R — радиус окружности (м)<br>T — период (с)<br>π ≈ 3.14</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Первая космическая скорость</h3>
+                        <div class="formula">\[ v = \sqrt{gR} \]</div>
+                        <div class="formula">\[ v = \sqrt{\frac{GM}{R+h}} \]</div>
+                        <p class="formula-description">v — первая космическая скорость (м/с)<br>g = 10 м/с² — ускорение свободного падения<br>R — радиус планеты (м)<br>h — высота (м)<br>M — масса планеты (кг)<br>G — гравитационная постоянная</p>
+                    </div>
+
+                    <div class="formula-card">
+                        <h3>Средняя скорость (общий случай)</h3>
+                        <div class="formula">\[ v_{cp} = \frac{S}{t} = \frac{S_1 + S_2 + S_3 ...}{t_1 + t_2 + t_3 ...} \]</div>
+                        <p class="formula-description">v<sub>cp</sub> — средняя скорость (м/с)<br>S — общий путь (м)<br>t — общее время (с)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Средняя скорость (частные случаи)</h3>
+                        <div class="formula">\[ v_{cp} = \frac{2v_1 v_2}{v_1 + v_2} \]</div>
+                        <p class="formula-description">Если S<sub>1</sub> = S<sub>2</sub> = S/2</p>
+                        <div class="formula">\[ v_{cp} = \frac{v_1 + v_2}{2} \]</div>
+                        <p class="formula-description">Если t<sub>1</sub> = t<sub>2</sub> = t/2</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Движение тела, брошенного горизонтально</h3>
+                        <div class="formula">\[ x = v_0 t \]</div>
+                        <div class="formula">\[ y = \frac{gt^2}{2} \]</div>
+                        <div class="formula">\[ t = \sqrt{\frac{2h}{g}} \]</div>
+                        <div class="formula">\[ S = v_0 \sqrt{\frac{2h}{g}} \]</div>
+                        <p class="formula-description">x — горизонтальное перемещение (м)<br>y — вертикальное перемещение (м)<br>v<sub>0</sub> — начальная скорость (м/с)<br>h — начальная высота (м)<br>g — ускорение свободного падения (м/с²)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Движение тела, брошенного под углом</h3>
+                        <div class="formula">\[ v_{0x} = v_0 \cos\alpha \]</div>
+                        <div class="formula">\[ v_{0y} = v_0 \sin\alpha \]</div>
+                        <div class="formula">\[ t = \frac{2v_0 \sin\alpha}{g} \]</div>
+                        <div class="formula">\[ h_{max} = \frac{v_0^2 \sin^2\alpha}{2g} \]</div>
+                        <div class="formula">\[ S = \frac{v_0^2 \sin 2\alpha}{g} \]</div>
+                        <p class="formula-description">α — угол броска<br>v<sub>0</sub> — начальная скорость (м/с)<br>g — ускорение свободного падения (м/с²)</p>
+                    </div>
+
+                    <div class="formula-card">
+                        <h3>Движение по окружности</h3>
+                        <div class="formula">
+                            \[ 
+                            \begin{aligned}
+                            &T = \frac{2\pi R}{v} = \frac{1}{\nu} \\[10pt]
+                            &\nu = \frac{1}{T} = \frac{v}{2\pi R} \\[10pt]
+                            &\omega = \frac{2\pi}{T} = 2\pi\nu = \frac{v}{R} \\[10pt]
+                            &v = \omega R \\[10pt]
+                            &a = \frac{v^2}{R} = \omega^2 R
+                            \end{aligned}
+                            \]
+                        </div>
+                        <p class="formula-description">
+                            T — период обращения (с)<br>
+                            ν — частота обращения (Гц)<br>
+                            ω — угловая скорость (рад/с)<br>
+                            v — линейная скорость (м/с)<br>
+                            R — радиус окружности (м)<br>
+                            a — центростремительное ускорение (м/с²)<br>
+                            π ≈ 3.14
+                             </p>
+                        </div>
+                    </div>
+                </div>               
+
+            <!-- 9 класс - Динамика -->
+            <div class="formula-section" id="dynamics">
+                <h2>9 класс - Динамика</h2>
+                <div class="formula-grid">
+                    <div class="formula-card">
+                        <h3>Сила тяжести</h3>
+                        <div class="formula">\[ F = mg \]</div>
+                        <p class="formula-description">F — сила тяжести (Н)<br>m — масса (кг)<br>g = 10 Н/кг</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Вес тела</h3>
+                        <div class="formula">\[ P = mg \]</div>
+                        <p class="formula-description">P — вес тела (Н)<br>m — масса (кг)<br>g = 10 Н/кг</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Сила упругости</h3>
+                        <div class="formula">\[ F = kx \]</div>
+                        <p class="formula-description">F — сила упругости (Н)<br>k — жесткость (Н/м)<br>x — удлинение (м)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Сила реакции опоры</h3>
+                        <div class="formula">\[ N = mg \]</div>
+                        <p class="formula-description">N — сила реакции опоры (Н)<br>m — масса (кг)<br>g = 10 Н/кг</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Сила трения</h3>
+                        <div class="formula">\[ F_{тр} = \mu N \]</div>
+                        <p class="formula-description">F<sub>тр</sub> — сила трения (Н)<br>μ — коэффициент трения<br>N — сила реакции опоры (Н)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Сила всемирного тяготения</h3>
+                        <div class="formula">\[ F = G\frac{m_1m_2}{R^2} \]</div>
+                        <p class="formula-description">F — сила тяготения (Н)<br>G — гравитационная постоянная<br>m<sub>1</sub>, m<sub>2</sub> — массы тел (кг)<br>R — расстояние между телами (м)</p>
+                    </div>
+
+                    <div class="formula-card">
+                        <h3>Закон Гука</h3>
+                        <div class="formula">\[ F = -k\Delta x \]</div>
+                        <p class="formula-description">F — сила упругости (Н)<br>k — коэффициент жесткости (Н/м)<br>Δx — удлинение (м)</p>
+                    </div>
+
+                    <div class="formula-card">
+                        <h3>Закон Ньютона</h3>
+                        <div class="formula">\[ F = ma \]</div>
+                        <p class="formula-description">F — сила (Н)<br>m — масса (кг)<br>a — ускорение (м/с²)</p>
+                    </div>
+
+                    <div class="formula-card">
+                        <h3>Правило моментов</h3>
+                        <div class="formula">
+                            \[ \sum F \cdot l = 0 \]
+                        </div>
+                        <p class="formula-description">
+                            F — сила (Н), l — плечо силы (м)<br>
+                            Для равновесия сумма моментов всех сил равна нулю
+                        </p>
+                    </div>
+                </div>
+            </div>
+                    
+            <!-- 9 класс - Колебания и волны -->
+            <div class="formula-section" id="conservation">
+                <h2>9 класс - Законы сохранения</h2>
+                <div class="formula-grid">
+                    <div class="formula-card">
+                        <h3>Импульс тела</h3>
+                        <div class="formula">\[ p = mv \]</div>
+                        <p class="formula-description">p — импульс тела (кг·м/с)<br>m — масса тела (кг)<br>v — скорость тела (м/с)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Импульс силы</h3>
+                        <div class="formula">\[ \Delta p = Ft \]</div>
+                        <p class="formula-description">Δp — изменение импульса (кг·м/с)<br>F — сила (Н)<br>t — время действия силы (с)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Закон сохранения импульса</h3>
+                        <div class="formula">\[ m_1v_1 + m_2v_2 = m_1u_1 + m_2u_2 \]</div>
+                        <p class="formula-description">m<sub>1</sub>, m<sub>2</sub> — массы тел (кг)<br>v<sub>1</sub>, v<sub>2</sub> — скорости до взаимодействия (м/с)<br>u<sub>1</sub>, u<sub>2</sub> — скорости после взаимодействия (м/с)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Механическая работа</h3>
+                        <div class="formula">\[ A = FS\cos\alpha \]</div>
+                        <p class="formula-description">A — работа (Дж)<br>F — сила (Н)<br>S — путь (м)<br>α — угол между направлением силы и перемещением</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Мощность</h3>
+                        <div class="formula">\[ N = \frac{A}{t} \]</div>
+                        <p class="formula-description">N — мощность (Вт)<br>A — работа (Дж)<br>t — время (с)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Кинетическая энергия</h3>
+                        <div class="formula">\[ E_k = \frac{mv^2}{2} \]</div>
+                        <p class="formula-description">E<sub>k</sub> — кинетическая энергия (Дж)<br>m — масса (кг)<br>v — скорость (м/с)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Потенциальная энергия</h3>
+                        <div class="formula">\[ E_p = mgh \]</div>
+                        <p class="formula-description">E<sub>p</sub> — потенциальная энергия (Дж)<br>m — масса (кг)<br>g = 10 Н/кг<br>h — высота (м)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Потенциальная энергия упруго деформированного тела</h3>
+                        <div class="formula">\[ E_p = \frac{kx^2}{2} \]</div>
+                        <p class="formula-description">E<sub>p</sub> — потенциальная энергия (Дж)<br>k — жесткость (Н/м)<br>x — удлинение (м)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Закон сохранения энергии</h3>
+                        <div class="formula">\[ E_{k1} + E_{p1} = E_{k2} + E_{p2} \]</div>
+                        <p class="formula-description">E<sub>k1</sub>, E<sub>p1</sub> — кинетическая и потенциальная энергия в начальный момент<br>E<sub>k2</sub>, E<sub>p2</sub> — кинетическая и потенциальная энергия в конечный момент</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="formula-section" id="magnetism">
+                <h2>10 класс - Магнетизм</h2>
+                <div class="formula-grid">
+                    <!-- Сила Ампера и Лоренца -->
+                    <div class="formula-card">
+                        <h3>Сила Ампера и Лоренца</h3>
+                        <div class="formula">\[ F_A = IBl\sin\alpha \]</div>
+                        <div class="formula">\[ F_L = qBv\sin\alpha \]</div>
+                        <p class="formula-description">F — сила (Н)<br>I — сила тока (А)<br>B — индукция (Тл)<br>l — длина проводника (м)<br>v — скорость заряда (м/с)</p>
+                    </div>
+            
+                    <!-- Магнитный поток и ЭДС индукции -->
+                    <div class="formula-card">
+                        <h3>Магнитный поток и закон Фарадея</h3>
+                        <div class="formula">\[ \Phi = BS\cos\alpha \]</div>
+                        <div class="formula">\[ \mathcal{E}_i = -\frac{\Delta\Phi}{\Delta t} \]</div>
+                        <p class="formula-description">Φ — магнитный поток (Вб)<br>ℰ<sub>i</sub> — ЭДС индукции (В)<br>t — время (с)</p>
+                    </div>
+            
+                    <!-- Индуктивность -->
+                    <div class="formula-card">
+                        <h3>Индуктивность и энергия поля</h3>
+                        <div class="formula">\[ \Phi = LI \]</div>
+                        <div class="formula">\[ W = \frac{LI^2}{2} \]</div>
+                        <p class="formula-description">L — индуктивность (Гн)<br>I — сила тока (А)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="formula-section" id="electrodynamics-advanced">
+                <h2>10 класс - Электродинамика</h2>
+                <div class="formula-grid">
+                    <!-- Закон Кулона и напряженность -->
+                    <div class="formula-card">
+                        <h3>Закон Кулона</h3>
+                        <div class="formula">\[ F = k\frac{|q_1||q_2|}{r^2} \]</div>
+                        <div class="formula">\[ k = \frac{1}{4\pi\varepsilon_0} \approx 9\cdot10^9 \text{ Н·м}^2/\text{Кл}^2 \]</div>
+                        <p class="formula-description">F — сила взаимодействия (Н)<br>q — заряды (Кл)<br>r — расстояние между зарядами (м)<br>ε<sub>0</sub> — электрическая постоянная</p>
+                    </div>
+            
+                    <!-- Напряженность поля -->
+                    <div class="formula-card">
+                        <h3>Напряжённость электрического поля</h3>
+                        <div class="formula">\[ \vec{E} = \frac{\vec{F}}{q} \]</div>
+                        <div class="formula">\[ E = k\frac{|Q|}{r^2} \]</div>
+                        <p class="formula-description">E — напряжённость (Н/Кл или В/м)<br>Q — заряд, создающий поле (Кл)</p>
+                    </div>
+            
+                    <!-- Потенциал и работа -->
+                    <div class="formula-card">
+                        <h3>Потенциал и работа поля</h3>
+                        <div class="formula">\[ \varphi = \frac{W}{q} \]</div>
+                        <div class="formula">\[ A = q(\varphi_1 - \varphi_2) = qU \]</div>
+                        <p class="formula-description">φ — потенциал (В)<br>W — потенциальная энергия (Дж)<br>U — напряжение (В)</p>
+                    </div>
+            
+                    <!-- Ёмкость и конденсаторы -->
+                    <div class="formula-card">
+                        <h3>Ёмкость и энергия конденсатора</h3>
+                        <div class="formula">\[ C = \frac{q}{U} \]</div>
+                        <div class="formula">\[ C = \frac{\varepsilon\varepsilon_0S}{d} \]</div>
+                        <div class="formula">\[ W = \frac{CU^2}{2} = \frac{q^2}{2C} \]</div>
+                        <p class="formula-description">C — ёмкость (Ф)<br>S — площадь пластин (м²)<br>d — расстояние между пластинами (м)<br>ε — диэлектрическая проницаемость</p>
+                    </div>
+
+                    <div class="formula-card">
+                        <h3>Закон Ома для полной цепи</h3>
+                        <div class="formula">
+                            \[
+                            I = \frac{\mathcal{E}}{R + r}
+                            \]
+                        </div>
+                        <p class="formula-description">
+                            I — сила тока (А)<br>
+                            ℰ — ЭДС источника (В)<br>
+                            R — сопротивление внешней цепи (Ом)<br>
+                            r — внутреннее сопротивление источника (Ом)
+                        </p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Мощность тока и закон Джоуля-Ленца</h3>
+                        <div class="formula">
+                            \[
+                            \begin{aligned}
+                            &P = I^2 R = \frac{U^2}{R} \\[8pt]
+                            &Q = I^2 R t
+                            \end{aligned}
+                            \]
+                        </div>
+                        <p class="formula-description">
+                            P — мощность тока (Вт)<br>
+                            Q — количество теплоты (Дж)<br>
+                            I — сила тока (А)<br>
+                            U — напряжение (В)<br>
+                            R — сопротивление (Ом)<br>
+                            t — время (с)
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="formula-section" id="molecular">
+                <h2>10 класс - Молекулярная физика</h2>
+                <div class="formula-grid">
+                    <div class="formula-card">
+                        <h3>Основное уравнение МКТ</h3>
+                        <div class="formula">\[ p = \frac{1}{3}nm_0v^2 \]</div>
+                        <p class="formula-description">p — давление (Па)<br>n — концентрация молекул (1/м³)<br>m<sub>0</sub> — масса молекулы (кг)<br>v — скорость молекул (м/с)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Уравнение состояния идеального газа</h3>
+                        <div class="formula">\[ \frac{p_1V_1}{T_1} = \frac{p_2V_2}{T_2} \]</div>
+                        <p class="formula-description">p — давление (Па)<br>V — объем (м³)<br>T — температура (К)</p>
+                    </div>
+                    
+                    <div class="formula-card">
+                        <h3>Уравнение Клапейрона-Менделеева</h3>
+                        <div class="formula">\[ pV = \frac{m}{M}RT \]</div>
+                        <p class="formula-description">p — давление (Па)<br>V — объем (м³)<br>m — масса газа (кг)<br>M — молярная масса (кг/моль)<br>R — универсальная газовая постоянная<br>T — температура (К)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="formula-section" id="quantum">
+                <h2>11 класс - Квантовая физика</h2>
+                <div class="formula-grid">
+                    <!-- Фотоэффект -->
+                    <div class="formula-card">
+                        <h3>Уравнение Эйнштейна для фотоэффекта</h3>
+                        <div class="formula">\[ h\nu = A_{вых} + \frac{mv^2}{2} \]</div>
+                        <div class="formula">\[ \lambda_{кр} = \frac{hc}{A_{вых}} \]</div>
+                        <p class="formula-description">h — постоянная Планка<br>ν — частота света (Гц)<br>A<sub>вых</sub> — работа выхода (Дж)<br>λ<sub>кр</sub> — красная граница фотоэффекта (м)</p>
+                    </div>
+            
+                    <!-- Энергия и импульс фотона -->
+                    <div class="formula-card">
+                        <h3>Энергия и импульс фотона</h3>
+                        <div class="formula">\[ E = h\nu = \frac{hc}{\lambda} \]</div>
+                        <div class="formula">\[ p = \frac{h}{\lambda} \]</div>
+                        <p class="formula-description">E — энергия фотона (Дж)<br>p — импульс фотона (кг·м/с)<br>λ — длина волны (м)</p>
+                    </div>
+            
+                    <!-- Атом Бора -->
+                    <div class="formula-card">
+                        <h3>Постулаты Бора</h3>
+                        <div class="formula">\[ mvr = n\frac{h}{2\pi} \]</div>
+                        <div class="formula">\[ E_n = -\frac{13.6}{n^2} \text{ эВ} \]</div>
+                        <p class="formula-description">n — главное квантовое число<br>E<sub>n</sub> — энергия уровня (эВ)<br>r — радиус орбиты (м)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="formula-section" id="nuclear">
+                <h2>11 класс - Ядерная физика</h2>
+                <div class="formula-grid">
+                    <!-- Энергия связи -->
+                    <div class="formula-card">
+                        <h3>Энергия связи ядра</h3>
+                        <div class="formula">\[ E_{св} = \Delta mc^2 \]</div>
+                        <div class="formula">\[ \Delta m = Zm_p + (A-Z)m_n - m_{ядра} \]</div>
+                        <p class="formula-description">E<sub>св</sub> — энергия связи (Дж)<br>Δm — дефект массы (кг)<br>Z — число протонов<br>A — массовое число</p>
+                    </div>
+            
+                    <!-- Закон радиоактивного распада -->
+                    <div class="formula-card">
+                        <h3>Закон радиоактивного распада</h3>
+                        <div class="formula">\[ N = N_0 \cdot 2^{-t/T} \]</div>
+                        <div class="formula">\[ N = N_0 e^{-\lambda t} \]</div>
+                        <p class="formula-description">N — число нераспавшихся ядер<br>N<sub>0</sub> — начальное число ядер<br>T — период полураспада<br>λ — постоянная распада</p>
+                    </div>
+            
+                    <!-- Ядерные реакции -->
+                    <div class="formula-card">
+                        <h3>Энергетический выход ядерной реакции</h3>
+                        <div class="formula">\[ Q = (M_1 + M_2 - M_3 - M_4)c^2 \]</div>
+                        <p class="formula-description">Q — энергетический выход (Дж)<br>M — массы частиц до и после реакции (кг)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="formula-section" id="optics">
+                <h2>11 класс - Оптика</h2>
+                <div class="formula-grid">
+                    <!-- Формула тонкой линзы -->
+                    <div class="formula-card">
+                        <h3>Формула тонкой линзы</h3>
+                        <div class="formula">\[ \frac{1}{F} = \frac{1}{d} + \frac{1}{f} \]</div>
+                        <div class="formula">\[ \Gamma = \frac{f}{d} \]</div>
+                        <p class="formula-description">F — фокусное расстояние (м)<br>d — расстояние до предмета (м)<br>f — расстояние до изображения (м)<br>Γ — увеличение</p>
+                    </div>
+            
+                    <!-- Интерференция -->
+                    <div class="formula-card">
+                        <h3>Условия интерференции</h3>
+                        <div class="formula">\[ \Delta = \pm m\lambda \] (максимум)</div>
+                        <div class="formula">\[ \Delta = \pm (2m+1)\frac{\lambda}{2} \] (минимум)</div>
+                        <p class="formula-description">Δ — разность хода (м)<br>m — порядок интерференции<br>λ — длина волны (м)</p>
+                    </div>
+            
+                    <!-- Дифракционная решетка -->
+                    <div class="formula-card">
+                        <h3>Дифракционная решетка</h3>
+                        <div class="formula">\[ d\sin\varphi = m\lambda \]</div>
+                        <p class="formula-description">d — период решетки (м)<br>φ — угол отклонения<br>m — порядок спектра</p>
+                    </div>
+                </div>
+            </div>
+
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>О проекте</h3>
+                    <p>Образовательный сайт по физике, созданный для студентов и всех, кто интересуется наукой.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Быстрые ссылки</h3>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="scientists.html">Учёные</a></li>
+                        <li><a href="formulas.html">Формулы</a></li>
+                        <li><a href="terms.html">Термины</a></li>
+                        <li><a href="graphs.html">Графики</a></li>
+                        <li><a href="instruments.html">Приборы</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p>email: kvotter513@mail.ru</p>
+                    <div class="social-icons">
+                        <a href="https://t.me/c4tcvt" target="_blank"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Physics. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Поиск по формулам
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('searchInput');
+            const formulaCards = document.querySelectorAll('.formula-card');
+            const noResults = document.getElementById('noResults');
+            const formulaSections = document.querySelectorAll('.formula-section');
+            
+            // Быстрая навигация
+            document.querySelectorAll('.quick-nav-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const sectionId = this.getAttribute('data-section');
+                    document.getElementById(sectionId).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Функция поиска
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                let hasResults = false;
+                
+                // Сначала скрываем все формулы
+                formulaCards.forEach(card => {
+                    card.style.display = 'none';
+                    card.classList.remove('highlight');
+                });
+                
+                // Показываем только соответствующие поиску
+                formulaCards.forEach(card => {
+                    const title = card.querySelector('h3').textContent.toLowerCase();
+                    const description = card.querySelector('.formula-description').textContent.toLowerCase();
+                    
+                    if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                        card.style.display = 'block';
+                        card.classList.add('highlight');
+                        hasResults = true;
+                        
+                        // Показываем родительский раздел
+                        const section = card.closest('.formula-section');
+                        if (section) {
+                            section.style.display = 'block';
+                        }
+                    }
+                });
+                
+                // Показываем/скрываем сообщение "Ничего не найдено"
+                if (!hasResults && searchTerm.length > 0) {
+                    noResults.style.display = 'block';
+                    
+                    // Скрываем все разделы
+                    formulaSections.forEach(section => {
+                        section.style.display = 'none';
+                    });
+                } else {
+                    noResults.style.display = 'none';
+                    
+                    // Показываем все разделы
+                    formulaSections.forEach(section => {
+                        section.style.display = 'block';
+                    });
+                }
+                
+                // Если поле поиска пустое, показываем все формулы
+                if (searchTerm.length === 0) {
+                    formulaCards.forEach(card => {
+                        card.style.display = 'block';
+                        card.classList.remove('highlight');
+                    });
+                    
+                    noResults.style.display = 'none';
+                    
+                    // Показываем все разделы
+                    formulaSections.forEach(section => {
+                        section.style.display = 'block';
+                    });
+                }
+            });
+            
+            // Очистка поиска при клике на иконку
+            document.querySelector('.search-icon').addEventListener('click', function() {
+                if (searchInput.value.length > 0) {
+                    searchInput.value = '';
+                    searchInput.dispatchEvent(new Event('input'));
+                }
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</body>
+</html>

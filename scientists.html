@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Физика - Учёные</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<!-- Кнопка "Наверх" -->
+<button id="backToTop" class="back-to-top" aria-label="Вернуться наверх">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-text">Физика</span>
+                <span class="logo-dot">.</span>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="scientists.html" class="active">Учёные</a></li>
+                    <li><a href="formulas.html">Формулы</a></li>
+                    <li><a href="terms.html">Термины</a></li>
+                    <li><a href="graphs.html">Графики</a></li>
+                    <li><a href="instruments.html">Приборы</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="hero-title">Великие учёные в физике</h1>
+            <p class="hero-subtitle">Люди, изменившие наше понимание вселенной</p>
+        </div>
+        <div class="hero-particles" id="particles-js"></div>
+    </section>
+
+    <section class="scientists-content">
+        <div class="container">
+            <!-- Альберт Эйнштейн -->
+<div class="scientist-card">
+    <div class="scientist-image">
+        <img src="images/250px-Albert_Einstein_(Nobel).jpg" alt="Альберт Эйнштейн">
+    </div>
+    <div class="scientist-info">
+        <h2>Альберт Эйнштейн</h2>
+        <span class="years">1879-1955</span>
+        <p>Немецкий физик-теоретик, разработавший теорию относительности, один из основателей современной теоретической физики, лауреат Нобелевской премии по физике 1921 года.</p>
+        <div class="contributions">
+            <h3>Основные вклады:</h3>
+            <ul>
+                <li>Теория относительности</li>
+                <li>Закон фотоэффекта</li>
+                <li>Теория броуновского движения</li>
+                <li>Квантовая теория света</li>
+            </ul>
+        </div>
+        <div class="wiki-link">
+            <a href="https://ru.ruwiki.ru/wiki/%D0%AD%D0%B9%D0%BD%D1%88%D1%82%D0%B5%D0%B9%D0%BD,_%D0%90%D0%BB%D1%8C%D0%B1%D0%B5%D1%80%D1%82" class="wiki-btn" target="_blank" rel="noopener noreferrer">
+                <i class="ruvik-icon">
+                    <img src="images/ruwiki.png" alt="РУВИКИ" width="16" height="16">
+                  </i> ⠀РУВИКИ
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Исаак Ньютон -->
+<div class="scientist-card">
+    <div class="scientist-image">
+        <img src="images/Portrait_of_Sir_Isaac_Newton,_1689.jpg" alt="Исаак Ньютон">
+    </div>
+    <div class="scientist-info">
+        <h2>Исаак Ньютон</h2>
+        <span class="years">1643-1727</span>
+        <p>Английский физик, математик, механик и астроном, один из создателей классической физики. Автор фундаментального труда "Математические начала натуральной философии".</p>
+        <div class="contributions">
+            <h3>Основные вклады:</h3>
+            <ul>
+                <li>Законы движения</li>
+                <li>Закон всемирного тяготения</li>
+                <li>Дифференциальное и интегральное исчисление</li>
+                <li>Теория цвета</li>
+            </ul>
+        </div>
+        <div class="wiki-link">
+            <a href="https://ru.ruwiki.ru/wiki/%D0%9D%D1%8C%D1%8E%D1%82%D0%BE%D0%BD,_%D0%98%D1%81%D0%B0%D0%B0%D0%BA" class="wiki-btn" target="_blank" rel="noopener noreferrer">
+                <i class="ruvik-icon">
+                    <img src="images/ruwiki.png" alt="РУВИКИ" width="16" height="16">
+                  </i> ⠀РУВИКИ
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Мария Кюри -->
+<div class="scientist-card">
+    <div class="scientist-image">
+        <img src="images/Marie_Curie_c._1920s.jpg" alt="Мария Кюри">
+    </div>
+    <div class="scientist-info">
+        <h2>Мария Кюри</h2>
+        <span class="years">1867-1934</span>
+        <p>Польско-французский учёный-экспериментатор, физик, химик, педагог, общественный деятель. Первая женщина-лауреат Нобелевской премии и первый дважды нобелевский лауреат в истории.</p>
+        <div class="contributions">
+            <h3>Основные вклады:</h3>
+            <ul>
+                <li>Исследование радиоактивности</li>
+                <li>Открытие полония и радия</li>
+                <li>Разработка теории радиоактивности</li>
+                <li>Создание мобильных рентгеновских установок</li>
+            </ul>
+        </div>
+        <div class="wiki-link">
+            <a href="https://ru.ruwiki.ru/wiki/%D0%A1%D0%BA%D0%BB%D0%BE%D0%B4%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F-%D0%9A%D1%8E%D1%80%D0%B8,_%D0%9C%D0%B0%D1%80%D0%B8%D1%8F" class="wiki-btn" target="_blank" rel="noopener noreferrer">
+                <i class="ruvik-icon">
+                    <img src="images/ruwiki.png" alt="РУВИКИ" width="16" height="16">
+                  </i> ⠀РУВИКИ
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Майкл Фарадей -->
+<div class="scientist-card">
+    <div class="scientist-image">
+        <img src="images/фарадей.jpg" alt="Майкл Фарадей">
+    </div>
+    <div class="scientist-info">
+        <h2>Майкл Фарадей</h2>
+        <span class="years">1791-1867</span>
+        <p>Английский физик-экспериментатор и химик, основоположник учения об электромагнитном поле. Член Лондонского королевского общества.</p>
+        <div class="contributions">
+            <h3>Основные вклады:</h3>
+            <ul>
+                <li>Открытие электромагнитной индукции</li>
+                <li>Создание первого электродвигателя</li>
+                <li>Открытие законов электролиза</li>
+                <li>Введение терминов "ион", "катод", "анод"</li>
+            </ul>
+        </div>
+        <div class="wiki-link">
+            <a href="https://ru.ruwiki.ru/wiki/%D0%A4%D0%B0%D1%80%D0%B0%D0%B4%D0%B5%D0%B9,_%D0%9C%D0%B0%D0%B9%D0%BA%D0%BB" class="wiki-btn" target="_blank" rel="noopener noreferrer">
+                <i class="ruvik-icon">
+                    <img src="images/ruwiki.png" alt="РУВИКИ" width="16" height="16">
+                  </i> ⠀РУВИКИ
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Михаил Ломоносов -->
+<div class="scientist-card">
+    <div class="scientist-image">
+        <img src="images/ломоносов.jpg" alt="Михаил Ломоносов">
+    </div>
+    <div class="scientist-info">
+        <h2>Михаил Васильевич Ломоносов</h2>
+        <span class="years">1711-1765</span>
+        <p>Первый русский учёный-естествоиспытатель мирового значения, энциклопедист, химик и физик, основатель Московского университета.</p>
+        <div class="contributions">
+            <h3>Основные вклады:</h3>
+            <ul>
+                <li>Закон сохранения массы вещества</li>
+                <li>Разработка атомно-молекулярной теории</li>
+                <li>Исследования атмосферного электричества</li>
+                <li>Основание первой химической лаборатории в России</li>
+            </ul>
+        </div>
+        <div class="wiki-link">
+            <a href="https://ru.ruwiki.ru/wiki/%D0%9B%D0%BE%D0%BC%D0%BE%D0%BD%D0%BE%D1%81%D0%BE%D0%B2,_%D0%9C%D0%B8%D1%85%D0%B0%D0%B8%D0%BB_%D0%92%D0%B0%D1%81%D0%B8%D0%BB%D1%8C%D0%B5%D0%B2%D0%B8%D1%87" class="wiki-btn" target="_blank" rel="noopener noreferrer">
+                <i class="ruvik-icon">
+                    <img src="images/ruwiki.png" alt="РУВИКИ" width="16" height="16">
+                  </i> ⠀РУВИКИ
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Александр Столетов -->
+<div class="scientist-card">
+    <div class="scientist-image">
+        <img src="images/столетов.jpg" alt="Александр Столетов">
+    </div>
+    <div class="scientist-info">
+        <h2>Александр Григорьевич Столетов</h2>
+        <span class="years">1839-1896</span>
+        <p>Русский физик, профессор Московского университета, основоположник количественных методов исследования фотоэффекта.</p>
+        <div class="contributions">
+            <h3>Основные вклады:</h3>
+            <ul>
+                <li>Пионерские исследования фотоэффекта</li>
+                <li>Разработка методов измерения магнитных свойств веществ</li>
+                <li>Создание первой отечественной школы физиков</li>
+                <li>Исследования газового разряда</li>
+            </ul>
+        </div>
+        <div class="wiki-link">
+            <a href="https://ru.ruwiki.ru/wiki/%D0%A1%D1%82%D0%BE%D0%BB%D0%B5%D1%82%D0%BE%D0%B2,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%93%D1%80%D0%B8%D0%B3%D0%BE%D1%80%D1%8C%D0%B5%D0%B2%D0%B8%D1%87" class="wiki-btn" target="_blank" rel="noopener noreferrer">
+                <i class="ruvik-icon">
+                    <img src="images/ruwiki.png" alt="РУВИКИ" width="16" height="16">
+                  </i> ⠀РУВИКИ
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Эрнест Резерфорд -->
+<div class="scientist-card">
+    <div class="scientist-image">
+        <img src="images/резерфорд.jpg" alt="Эрнест Резерфорд">
+    </div>
+    <div class="scientist-info">
+        <h2>Эрнест Резерфорд</h2>
+        <span class="years">1871-1937</span>
+        <p>Британский физик новозеландского происхождения, "отец" ядерной физики, лауреат Нобелевской премии по химии 1908 года.</p>
+        <div class="contributions">
+            <h3>Основные вклады:</h3>
+            <ul>
+                <li>Планетарная модель атома</li>
+                <li>Открытие альфа- и бета-излучения</li>
+                <li>Осуществление первой искусственной ядерной реакции</li>
+                <li>Открытие протона</li>
+            </ul>
+        </div>
+        <div class="wiki-link">
+            <a href="https://ru.ruwiki.ru/wiki/%D0%A0%D0%B5%D0%B7%D0%B5%D1%80%D1%84%D0%BE%D1%80%D0%B4,_%D0%AD%D1%80%D0%BD%D0%B5%D1%81%D1%82" class="wiki-btn" target="_blank" rel="noopener noreferrer">
+                <i class="ruvik-icon">
+                    <img src="images/ruwiki.png" alt="РУВИКИ" width="16" height="16">
+                  </i> ⠀РУВИКИ
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Макс Планк -->
+<div class="scientist-card">
+    <div class="scientist-image">
+        <img src="images/планк.jpg" alt="Макс Планк">
+    </div>
+    <div class="scientist-info">
+        <h2>Макс Планк</h2>
+        <span class="years">1858-1947</span>
+        <p>Немецкий физик-теоретик, основоположник квантовой теории, лауреат Нобелевской премии по физике 1918 года.</p>
+        <div class="contributions">
+            <h3>Основные вклады:</h3>
+            <ul>
+                <li>Формулировка квантовой гипотезы</li>
+                <li>Вывод формулы Планка для излучения абсолютно чёрного тела</li>
+                <li>Введение постоянной Планка (h)</li>
+                <li>Развитие термодинамики</li>
+            </ul>
+        </div>
+        <div class="wiki-link">
+            <a href="https://ru.ruwiki.ru/wiki/%D0%9F%D0%BB%D0%B0%D0%BD%D0%BA,_%D0%9C%D0%B0%D0%BA%D1%81" class="wiki-btn" target="_blank" rel="noopener noreferrer">
+                <i class="ruvik-icon">
+                    <img src="images/ruwiki.png" alt="РУВИКИ" width="16" height="16">
+                  </i> ⠀РУВИКИ
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Александр Лодыгин -->
+<div class="scientist-card">
+    <div class="scientist-image">
+        <img src="images/лодыгин.jpg" alt="Александр Лодыгин">
+    </div>
+    <div class="scientist-info">
+        <h2>Александр Николаевич Лодыгин</h2>
+        <span class="years">1847-1923</span>
+        <p>Русский электротехник, изобретатель лампы накаливания, предприниматель.</p>
+        <div class="contributions">
+            <h3>Основные вклады:</h3>
+            <ul>
+                <li>Изобретение угольной лампы накаливания</li>
+                <li>Создание первых ламп с металлической нитью</li>
+                <li>Разработка методов электрического отопления</li>
+                <li>Пионерские работы в области электротехники</li>
+            </ul>
+        </div>
+        <div class="wiki-link">
+            <a href="https://ru.ruwiki.ru/wiki/%D0%9B%D0%BE%D0%B4%D1%8B%D0%B3%D0%B8%D0%BD,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D0%B5%D0%B2%D0%B8%D1%87" class="wiki-btn" target="_blank" rel="noopener noreferrer">
+                <i class="ruvik-icon">
+                    <img src="images/ruwiki.png" alt="РУВИКИ" width="16" height="16">
+                  </i> ⠀РУВИКИ
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Никола Тесла -->
+<div class="scientist-card">
+    <div class="scientist-image">
+        <img src="images/тесла.jpg" alt="Никола Тесла">
+    </div>
+    <div class="scientist-info">
+        <h2>Никола Тесла</h2>
+        <span class="years">1856-1943</span>
+        <p>Сербско-американский изобретатель, инженер и физик, специалист в области электротехники и радиотехники.</p>
+        <div class="contributions">
+            <h3>Основные вклады:</h3>
+            <ul>
+                <li>Изобретение переменного тока</li>
+                <li>Создание асинхронного двигателя</li>
+                <li>Разработка принципов радиосвязи</li>
+                <li>Эксперименты с высокочастотными токами</li>
+            </ul>
+        </div>
+        <div class="wiki-link">
+            <a href="https://ru.ruwiki.ru/wiki/%D0%A2%D0%B5%D1%81%D0%BB%D0%B0,_%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0" class="wiki-btn" target="_blank" rel="noopener noreferrer">
+                <i class="ruvik-icon">
+                    <img src="images/ruwiki.png" alt="РУВИКИ" width="16" height="16">
+                  </i> ⠀РУВИКИ
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Стивен Хокинг -->
+<div class="scientist-card">
+    <div class="scientist-image">
+        <img src="images/хокинг.jpg" alt="Стивен Хокинг">
+    </div>
+    <div class="scientist-info">
+        <h2>Стивен Хокинг</h2>
+        <span class="years">1942-2018</span>
+        <p>Английский физик-теоретик, космолог и популяризатор науки, исследователь чёрных дыр.</p>
+        <div class="contributions">
+            <h3>Основные вклады:</h3>
+            <ul>
+                <li>Теория излучения Хокинга</li>
+                <li>Исследования сингулярностей в общей теории относительности</li>
+                <li>Работы по квантовой гравитации</li>
+                <li>Популяризация науки ("Краткая история времени")</li>
+            </ul>
+        </div>
+        <div class="wiki-link">
+            <a href="https://ru.ruwiki.ru/wiki/%D0%A5%D0%BE%D0%BA%D0%B8%D0%BD%D0%B3,_%D0%A1%D1%82%D0%B8%D0%B2%D0%B5%D0%BD" class="wiki-btn" target="_blank" rel="noopener noreferrer">
+                <i class="ruvik-icon">
+                    <img src="images/ruwiki.png" alt="РУВИКИ" width="16" height="16">
+                  </i> ⠀РУВИКИ
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Нильс Бор -->
+<div class="scientist-card">
+    <div class="scientist-image">
+        <img src="images/бор.jpg" alt="Нильс Бор">
+    </div>
+    <div class="scientist-info">
+        <h2>Нильс Бор</h2>
+        <span class="years">1885-1962</span>
+        <p>Датский физик-теоретик, один из создателей квантовой механики, лауреат Нобелевской премии по физике 1922 года.</p>
+        <div class="contributions">
+            <h3>Основные вклады:</h3>
+            <ul>
+                <li>Квантовая модель атома</li>
+                <li>Принцип соответствия</li>
+                <li>Принцип дополнительности</li>
+                <li>Создание Копенгагенской интерпретации квантовой механики</li>
+            </ul>
+        </div>
+        <div class="wiki-link">
+            <a href="https://ru.ruwiki.ru/wiki/%D0%91%D0%BE%D1%80,_%D0%9D%D0%B8%D0%BB%D1%8C%D1%81" class="wiki-btn" target="_blank" rel="noopener noreferrer">
+                <i class="ruvik-icon">
+                    <img src="images/ruwiki.png" alt="РУВИКИ" width="16" height="16">
+                  </i> ⠀РУВИКИ
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Авогадро Амедео -->
+<div class="scientist-card">
+    <div class="scientist-image">
+        <img src="images/Авогадро.jpg" alt="Амедео Авогадро">
+    </div>
+    <div class="scientist-info">
+        <h2>Амедео Авогадро</h2>
+        <span class="years">1776-1856</span>
+        <p>Итальянский учёный, физик и химик. Сформулировал один из основных газовых законов, названный его именем.</p>
+        <div class="contributions">
+            <h3>Основные вклады:</h3>
+            <ul>
+                <li>Закон Авогадро</li>
+                <li>Развитие молекулярной теории</li>
+                <li>Постоянная Авогадро</li>
+            </ul>
+        </div>
+        <div class="wiki-link">
+            <a href="https://ru.ruwiki.ru/wiki/%D0%90%D0%B2%D0%BE%D0%B3%D0%B0%D0%B4%D1%80%D0%BE,_%D0%90%D0%BC%D0%B5%D0%B4%D0%B5%D0%BE" class="wiki-btn" target="_blank" rel="noopener noreferrer">
+                <i class="ruvik-icon">
+                    <img src="images/ruwiki.png" alt="РУВИКИ" width="16" height="16">
+                  </i> ⠀РУВИКИ
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Ампер Андре Мари -->
+<div class="scientist-card">
+    <div class="scientist-image">
+        <img src="images/Ампер.jpg" alt="Андре-Мари Ампер">
+    </div>
+    <div class="scientist-info">
+        <h2>Андре-Мари Ампер</h2>
+        <span class="years">1775-1836</span>
+        <p>Французский физик, математик и естествоиспытатель. Основоположник электродинамики.</p>
+        <div class="contributions">
+            <h3>Основные вклады:</h3>
+            <ul>
+                <li>Закон Ампера</li>
+                <li>Теория электромагнетизма</li>
+                <li>Правило буравчика</li>
+            </ul>
+        </div>
+        <div class="wiki-link">
+            <a href="https://ru.ruwiki.ru/wiki/%D0%90%D0%BC%D0%BF%D0%B5%D1%80,_%D0%90%D0%BD%D0%B4%D1%80%D0%B5-%D0%9C%D0%B0%D1%80%D0%B8" class="wiki-btn" target="_blank" rel="noopener noreferrer">
+                <i class="ruvik-icon">
+                    <img src="images/ruwiki.png" alt="РУВИКИ" width="16" height="16">
+                  </i> ⠀РУВИКИ
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Архимед -->
+<div class="scientist-card">
+    <div class="scientist-image">
+        <img src="images/Архимед.jpg" alt="Архимед">
+    </div>
+    <div class="scientist-info">
+        <h2>Архимед</h2>
+        <span class="years">287 до н.э.-212 до н.э.</span>
+        <p>Древнегреческий математик, физик и инженер. Один из величайших учёных античности.</p>
+        <div class="contributions">
+            <h3>Основные вклады:</h3>
+            <ul>
+                <li>Закон Архимеда</li>
+                <li>Основы гидростатики</li>
+                <li>Изобретение архимедова винта</li>
+                <li>Методы вычисления площадей и объёмов</li>
+            </ul>
+        </div>
+        <div class="wiki-link">
+            <a href="https://ru.ruwiki.ru/wiki/%D0%90%D1%80%D1%85%D0%B8%D0%BC%D0%B5%D0%B4" class="wiki-btn" target="_blank" rel="noopener noreferrer">
+                <i class="ruvik-icon">
+                    <img src="images/ruwiki.png" alt="РУВИКИ" width="16" height="16">
+                  </i> ⠀РУВИКИ
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Ватт Джеймс -->
+<div class="scientist-card">
+    <div class="scientist-image">
+        <img src="images/Ватт.jpg" alt="Джеймс Ватт">
+    </div>
+    <div class="scientist-info">
+        <h2>Джеймс Ватт</h2>
+        <span class="years">1736-1819</span>
+        <p>Шотландский инженер и изобретатель. Внёс значительный вклад в развитие паровых машин.</p>
+        <div class="contributions">
+            <h3>Основные вклады:</h3>
+            <ul>
+                <li>Усовершенствование паровой машины</li>
+                <li>Единица мощности - ватт</li>
+                <li>Паровая машина двойного действия</li>
+            </ul>
+        </div>
+        <div class="wiki-link">
+            <a href="https://ru.ruwiki.ru/wiki/%D0%A3%D0%B0%D1%82%D1%82,_%D0%94%D0%B6%D0%B5%D0%B9%D0%BC%D1%81" class="wiki-btn" target="_blank" rel="noopener noreferrer">
+                <i class="ruvik-icon">
+                    <img src="images/ruwiki.png" alt="РУВИКИ" width="16" height="16">
+                  </i> ⠀РУВИКИ
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Вольта Алессандро -->
+<div class="scientist-card">
+    <div class="scientist-image">
+        <img src="images/Вольта.jpg" alt="Алессандро Вольта">
+    </div>
+    <div class="scientist-info">
+        <h2>Алессандро Вольта</h2>
+        <span class="years">1745-1827</span>
+        <p>Итальянский физик и химик, один из основоположников учения об электричестве.</p>
+        <div class="contributions">
+            <h3>Основные вклады:</h3>
+            <ul>
+                <li>Изобретение гальванического элемента</li>
+                <li>Электрохимический ряд напряжений</li>
+                <li>Единица напряжения - вольт</li>
+            </ul>
+        </div>
+        <div class="wiki-link">
+            <a href="https://ru.ruwiki.ru/wiki/%D0%92%D0%BE%D0%BB%D1%8C%D1%82%D0%B0,_%D0%90%D0%BB%D0%B5%D1%81%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE" class="wiki-btn" target="_blank" rel="noopener noreferrer">
+                <i class="ruvik-icon">
+                    <img src="images/ruwiki.png" alt="РУВИКИ" width="16" height="16">
+                  </i> ⠀РУВИКИ
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Галилео Галилей -->
+<div class="scientist-card">
+    <div class="scientist-image">
+        <img src="images/Галилео.jpg" alt="Галилео Галилей">
+    </div>
+    <div class="scientist-info">
+        <h2>Галилео Галилей</h2>
+        <span class="years">1564-1642</span>
+        <p>Итальянский физик, астроном и философ. Один из основателей современного естествознания.</p>
+        <div class="contributions">
+            <h3>Основные вклады:</h3>
+            <ul>
+                <li>Принцип относительности</li>
+                <li>Усовершенствование телескопа</li>
+                <li>Открытие спутников Юпитера</li>
+                <li>Закон свободного падения</li>
+            </ul>
+        </div>
+        <div class="wiki-link">
+            <a href="https://ru.ruwiki.ru/wiki/%D0%93%D0%B0%D0%BB%D0%B8%D0%BB%D0%B5%D0%B9,_%D0%93%D0%B0%D0%BB%D0%B8%D0%BB%D0%B5%D0%BE" class="wiki-btn" target="_blank" rel="noopener noreferrer">
+                <i class="ruvik-icon">
+                    <img src="images/ruwiki.png" alt="РУВИКИ" width="16" height="16">
+                  </i> ⠀РУВИКИ
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Джоуль Джеймс Прескотт -->
+<div class="scientist-card">
+    <div class="scientist-image">
+        <img src="images/джоуль.jpg" alt="Джеймс Прескотт Джоуль">
+    </div>
+    <div class="scientist-info">
+        <h2>Джеймс Прескотт Джоуль</h2>
+        <span class="years">1818-1889</span>
+        <p>Английский физик. Внёс значительный вклад в термодинамику и электромагнетизм.</p>
+        <div class="contributions">
+            <h3>Основные вклады:</h3>
+            <ul>
+                <li>Закон Джоуля-Ленца</li>
+                <li>Эквивалентность работы и теплоты</li>
+                <li>Единица энергии - джоуль</li>
+            </ul>
+        </div>
+        <div class="wiki-link">
+            <a href="https://ru.ruwiki.ru/wiki/%D0%94%D0%B6%D0%BE%D1%83%D0%BB%D1%8C,_%D0%94%D0%B6%D0%B5%D0%B9%D0%BC%D1%81" class="wiki-btn" target="_blank" rel="noopener noreferrer">
+                <i class="ruvik-icon">
+                    <img src="images/ruwiki.png" alt="РУВИКИ" width="16" height="16">
+                  </i> ⠀РУВИКИ
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Герц Генрих -->
+<div class="scientist-card">
+    <div class="scientist-image">
+        <img src="images/герц.jpg" alt="Генрих Герц">
+    </div>
+    <div class="scientist-info">
+        <h2>Генрих Герц</h2>
+        <span class="years">1857-1894</span>
+        <p>Немецкий физик. Экспериментально подтвердил существование электромагнитных волн.</p>
+        <div class="contributions">
+            <h3>Основные вклады:</h3>
+            <ul>
+                <li>Экспериментальное подтверждение теории Максвелла</li>
+                <li>Открытие фотоэффекта</li>
+                <li>Единица частоты - герц</li>
+            </ul>
+        </div>
+        <div class="wiki-link">
+            <a href="https://ru.ruwiki.ru/wiki/%D0%93%D0%B5%D1%80%D1%86,_%D0%93%D0%B5%D0%BD%D1%80%D0%B8%D1%85_%D0%A0%D1%83%D0%B4%D0%BE%D0%BB%D1%8C%D1%84" class="wiki-btn" target="_blank" rel="noopener noreferrer">
+                <i class="ruvik-icon">
+                    <img src="images/ruwiki.png" alt="РУВИКИ" width="16" height="16">
+                  </i> ⠀РУВИКИ
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Максвелл Джеймс Клерк -->
+<div class="scientist-card">
+    <div class="scientist-image">
+        <img src="images/максвелл.jpg" alt="Джеймс Клерк Максвелл">
+    </div>
+    <div class="scientist-info">
+        <h2>Джеймс Клерк Максвелл</h2>
+        <span class="years">1831-1879</span>
+        <p>Шотландский физик. Создатель классической электродинамики и кинетической теории газов.</p>
+        <div class="contributions">
+            <h3>Основные вклады:</h3>
+            <ul>
+                <li>Уравнения Максвелла</li>
+                <li>Теория электромагнитного поля</li>
+                <li>Распределение Максвелла</li>
+                <li>Теория цветного зрения</li>
+            </ul>
+        </div>
+        <div class="wiki-link">
+            <a href="https://ru.ruwiki.ru/wiki/%D0%9C%D0%B0%D0%BA%D1%81%D0%B2%D0%B5%D0%BB%D0%BB,_%D0%94%D0%B6%D0%B5%D0%B9%D0%BC%D1%81_%D0%9A%D0%BB%D0%B5%D1%80%D0%BA" class="wiki-btn" target="_blank" rel="noopener noreferrer">
+                <i class="ruvik-icon">
+                    <img src="images/ruwiki.png" alt="РУВИКИ" width="16" height="16">
+                  </i> ⠀РУВИКИ
+            </a>
+        </div>
+    </div>
+</div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>О проекте</h3>
+                    <p>Образовательный сайт по физике, созданный для студентов и всех, кто интересуется наукой.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Быстрые ссылки</h3>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="scientists.html">Учёные</a></li>
+                        <li><a href="formulas.html">Формулы</a></li>
+                        <li><a href="terms.html">Термины</a></li>
+                        <li><a href="graphs.html">Графики</a></li>
+                        <li><a href="instruments.html">Приборы</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p>email: kvotter513@mail.ru</p>
+                    <div class="social-icons">
+                        <a href="https://t.me/c4tcvt" target="_blank"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Physics. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Физика - Приборы</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Стили для поиска */
+        .search-container {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            position: relative;
+        }
+        .search-input {
+            width: 100%;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: 2px solid #3a86ff;
+            border-radius: 50px;
+            outline: none;
+            transition: all 0.3s;
+            padding-left: 50px;
+        }
+        .search-input:focus {
+            box-shadow: 0 0 10px rgba(58, 134, 255, 0.3);
+        }
+        .search-icon {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #3a86ff;
+        }
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            font-size: 18px;
+            color: #6c757d;
+            display: none;
+        }
+        .instrument-card.highlight {
+            background-color: rgba(58, 134, 255, 0.1);
+            border-left: 4px solid #3a86ff;
+        }
+        .quick-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        .quick-nav-btn {
+            padding: 8px 16px;
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .quick-nav-btn:hover {
+            background: #3a86ff;
+            color: white;
+            border-color: #3a86ff;
+        }
+    </style>
+</head>
+
+<!-- Кнопка "Наверх" -->
+<button id="backToTop" class="back-to-top" aria-label="Вернуться наверх">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-text">Физика</span>
+                <span class="logo-dot">.</span>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="scientists.html">Учёные</a></li>
+                    <li><a href="formulas.html">Формулы</a></li>
+                    <li><a href="terms.html">Термины</a></li>
+                    <li><a href="graphs.html">Графики</a></li>
+                    <li><a href="instruments.html" class="active">Приборы</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="hero-title">Физические приборы</h1>
+            <p class="hero-subtitle">Инструменты для исследования физических явлений</p>
+        </div>
+        <div class="hero-particles" id="particles-js"></div>
+    </section>
+
+    <section class="instruments-content">
+        <div class="container">
+            <!-- Поиск -->
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="searchInput" class="search-input" placeholder="Поиск приборов...">
+            </div>
+
+            <!-- Быстрая навигация -->
+            <div class="quick-nav">
+                <button class="quick-nav-btn" data-section="mechanics">Механика</button>
+                <button class="quick-nav-btn" data-section="molecular">Молекулярная физика</button>
+                <button class="quick-nav-btn" data-section="electrodynamics">Электродинамика</button>
+                <button class="quick-nav-btn" data-section="optics">Оптика</button>
+                <button class="quick-nav-btn" data-section="thermodynamics">Термодинамика</button>
+                <button class="quick-nav-btn" data-section="nuclear">Ядерная физика</button>
+            </div>
+
+            <!-- Сообщение, если ничего не найдено -->
+            <div class="no-results" id="noResults">
+                Ничего не найдено. Попробуйте изменить запрос.
+            </div>
+
+            <!-- Механика -->
+            <div class="instrument-section" id="mechanics">
+                <h2>Механика</h2>
+                <div class="instrument-grid">
+                    <div class="instrument-card">
+                        <div class="instrument-image">
+                            <img src="images/Анемометр.jpg" alt="Анемометр">
+                        </div>
+                        <div class="instrument-info">
+                            <h3>Анемометр</h3>
+                            <p>Прибор для измерения скорости ветра или других газовых потоков.</p>
+                            <div class="instrument-usage">
+                                <h4>Применение:</h4>
+                                <ul>
+                                    <li>Метеорологические наблюдения</li>
+                                    <li>Авиация</li>
+                                    <li>Экологический мониторинг</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="instrument-card">
+                        <div class="instrument-image">
+                            <img src="images/Динамометр.jpg" alt="Динамометр">
+                        </div>
+                        <div class="instrument-info">
+                            <h3>Динамометр</h3>
+                            <p>Прибор для измерения силы или момента силы.</p>
+                            <div class="instrument-usage">
+                                <h4>Применение:</h4>
+                                <ul>
+                                    <li>Измерение мышечной силы</li>
+                                    <li>Испытания материалов</li>
+                                    <li>Промышленные измерения</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                            <div class="instrument-card">
+                                <div class="instrument-image">
+                                    <img src="images/Kompas-640x479.jpg" alt="Компас">
+                                </div>
+                                <div class="instrument-info">
+                                    <h3>Компас</h3>
+                                    <p>Прибор для определения сторон света и направления.</p>
+                                    <div class="instrument-usage">
+                                        <h4>Применение:</h4>
+                                        <ul>
+                                            <li>Навигация и путешествия</li>
+                                            <li>Военное дело</li>
+                                            <li>Геология</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                    <div class="instrument-card">
+                        <div class="instrument-image">
+                            <img src="images/Секундомер.jpg" alt="Секундомер">
+                        </div>
+                        <div class="instrument-info">
+                            <h3>Секундомер</h3>
+                            <p>Прибор для точного измерения промежутков времени.</p>
+                            <div class="instrument-usage">
+                                <h4>Применение:</h4>
+                                <ul>
+                                    <li>Спортивные соревнования</li>
+                                    <li>Лабораторные эксперименты</li>
+                                    <li>Хронометраж процессов</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Молекулярная физика -->
+            <div class="instrument-section" id="molecular">
+                <h2>Молекулярная физика</h2>
+                <div class="instrument-grid">
+                    <div class="instrument-card">
+                        <div class="instrument-image">
+                            <img src="images/Барометр.jpg" alt="Барометр">
+                        </div>
+                        <div class="instrument-info">
+                            <h3>Барометр</h3>
+                            <p>Прибор для измерения атмосферного давления.</p>
+                            <div class="instrument-usage">
+                                <h4>Применение:</h4>
+                                <ul>
+                                    <li>Метеорология</li>
+                                    <li>Авиация</li>
+                                    <li>Прогнозирование погоды</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="instrument-card">
+                        <div class="instrument-image">
+                            <img src="images/Гигрометр.jpg" alt="Гигрометр">
+                        </div>
+                        <div class="instrument-info">
+                            <h3>Гигрометр</h3>
+                            <p>Прибор для измерения влажности воздуха.</p>
+                            <div class="instrument-usage">
+                                <h4>Применение:</h4>
+                                <ul>
+                                    <li>Метеорологические наблюдения</li>
+                                    <li>Контроль микроклимата</li>
+                                    <li>Промышленные процессы</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="instrument-card">
+                        <div class="instrument-image">
+                            <img src="images/Манометры_различных_диаметров.jpg" alt="Манометр">
+                        </div>
+                        <div class="instrument-info">
+                            <h3>Манометр</h3>
+                            <p>Прибор для измерения давления жидкостей и газов.</p>
+                            <div class="instrument-usage">
+                                <h4>Применение:</h4>
+                                <ul>
+                                    <li>Промышленные системы</li>
+                                    <li>Медицинское оборудование</li>
+                                    <li>Автомобильные системы</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Электродинамика -->
+            <div class="instrument-section" id="electrodynamics">
+                <h2>Электродинамика</h2>
+                <div class="instrument-grid">
+                    <div class="instrument-card">
+                        <div class="instrument-image">
+                            <img src="images/амперметр.jpg" alt="Амперметр">
+                        </div>
+                        <div class="instrument-info">
+                            <h3>Амперметр</h3>
+                            <p>Прибор для измерения силы электрического тока.</p>
+                            <div class="instrument-usage">
+                                <h4>Применение:</h4>
+                                <ul>
+                                    <li>Электротехнические измерения</li>
+                                    <li>Лабораторные работы</li>
+                                    <li>Промышленное оборудование</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="instrument-card">
+                        <div class="instrument-image">
+                            <img src="images/Вольтметр.jpg" alt="Вольтметр">
+                        </div>
+                        <div class="instrument-info">
+                            <h3>Вольтметр</h3>
+                            <p>Прибор для измерения электрического напряжения.</p>
+                            <div class="instrument-usage">
+                                <h4>Применение:</h4>
+                                <ul>
+                                    <li>Электротехника</li>
+                                    <li>Бытовые измерения</li>
+                                    <li>Промышленные системы</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="instrument-card">
+                        <div class="instrument-image">
+                            <img src="images/Ваттметр.jpg" alt="Ваттметр">
+                        </div>
+                        <div class="instrument-info">
+                            <h3>Ваттметр</h3>
+                            <p>Прибор для измерения мощности электрического тока.</p>
+                            <div class="instrument-usage">
+                                <h4>Применение:</h4>
+                                <ul>
+                                    <li>Энергетика</li>
+                                    <li>Промышленные измерения</li>
+                                    <li>Бытовые электросети</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="instrument-card">
+                        <div class="instrument-image">
+                            <img src="images/Гальванометр.jpg" alt="Гальванометр">
+                        </div>
+                        <div class="instrument-info">
+                            <h3>Гальванометр</h3>
+                            <p>Чувствительный прибор для обнаружения и измерения малых электрических токов.</p>
+                            <div class="instrument-usage">
+                                <h4>Применение:</h4>
+                                <ul>
+                                    <li>Точные электроизмерения</li>
+                                    <li>Научные исследования</li>
+                                    <li>Медицинская аппаратура</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="instrument-card">
+                        <div class="instrument-image">
+                            <img src="images/генератор-частот.jpg" alt="Генератор сигналов">
+                        </div>
+                        <div class="instrument-info">
+                            <h3>Генератор сигналов</h3>
+                            <p>Прибор для создания электрических колебаний различной формы и частоты.</p>
+                            <div class="instrument-usage">
+                                <h4>Применение:</h4>
+                                <ul>
+                                    <li>Радиотехника</li>
+                                    <li>Электроника</li>
+                                    <li>Научные исследования</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="instrument-card">
+                        <div class="instrument-image">
+                            <img src="images/омметр.jpg" alt="Омметр">
+                        </div>
+                        <div class="instrument-info">
+                            <h3>Омметр</h3>
+                            <p>Прибор для измерения электрического сопротивления.</p>
+                            <div class="instrument-usage">
+                                <h4>Применение:</h4>
+                                <ul>
+                                    <li>Электротехнические измерения</li>
+                                    <li>Проверка целостности цепей</li>
+                                    <li>Диагностика электрооборудования</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="instrument-card">
+                        <div class="instrument-image">
+                            <img src="images/Осциллограф_.jpg" alt="Осциллограф">
+                        </div>
+                        <div class="instrument-info">
+                            <h3>Осциллограф</h3>
+                            <p>Прибор для исследования электрических сигналов во временной области.</p>
+                            <div class="instrument-usage">
+                                <h4>Применение:</h4>
+                                <ul>
+                                    <li>Электроника</li>
+                                    <li>Радиотехника</li>
+                                    <li>Научные исследования</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="instrument-card">
+                        <div class="instrument-image">
+                            <img src="images/реостат.jpg" alt="Реостат">
+                        </div>
+                        <div class="instrument-info">
+                            <h3>Реостат</h3>
+                            <p>Прибор для регулировки силы тока в электрической цепи.</p>
+                            <div class="instrument-usage">
+                                <h4>Применение:</h4>
+                                <ul>
+                                    <li>Регулировка тока</li>
+                                    <li>Лабораторные работы</li>
+                                    <li>Промышленные системы</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="instrument-card">
+                        <div class="instrument-image">
+                            <img src="images/электрометр.jpg" alt="Электрометр">
+                        </div>
+                        <div class="instrument-info">
+                            <h3>Электрометр</h3>
+                            <p>Прибор для измерения электрического заряда или разности потенциалов.</p>
+                            <div class="instrument-usage">
+                                <h4>Применение:</h4>
+                                <ul>
+                                    <li>Электростатические измерения</li>
+                                    <li>Научные эксперименты</li>
+                                    <li>Радиационные измерения</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Оптика -->
+            <div class="instrument-section" id="optics">
+                <h2>Оптика</h2>
+                <div class="instrument-grid">
+                    <div class="instrument-card">
+                        <div class="instrument-image">
+                            <img src="images/микроскоп.jpg" alt="Микроскоп">
+                        </div>
+                        <div class="instrument-info">
+                            <h3>Микроскоп</h3>
+                            <p>Прибор для наблюдения микроскопических объектов.</p>
+                            <div class="instrument-usage">
+                                <h4>Применение:</h4>
+                                <ul>
+                                    <li>Биологические исследования</li>
+                                    <li>Медицина</li>
+                                    <li>Материаловедение</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="instrument-card">
+                        <div class="instrument-image">
+                            <img src="images/телескопчик.jpg" alt="Телескоп">
+                        </div>
+                        <div class="instrument-info">
+                            <h3>Телескоп</h3>
+                            <p>Прибор для наблюдения удалённых объектов.</p>
+                            <div class="instrument-usage">
+                                <h4>Применение:</h4>
+                                <ul>
+                                    <li>Астрономия</li>
+                                    <li>Навигация</li>
+                                    <li>Военное дело</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="instrument-card">
+                        <div class="instrument-image">
+                            <img src="images/спектрометр.jpg" alt="Спектрометр">
+                        </div>
+                        <div class="instrument-info">
+                            <h3>Спектрометр</h3>
+                            <p>Прибор для анализа спектрального состава излучения.</p>
+                            <div class="instrument-usage">
+                                <h4>Применение:</h4>
+                                <ul>
+                                    <li>Химический анализ</li>
+                                    <li>Астрофизика</li>
+                                    <li>Медицинская диагностика</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="instrument-card">
+                        <div class="instrument-image">
+                            <img src="images/фотометр.jpg" alt="Фотометр">
+                        </div>
+                        <div class="instrument-info">
+                            <h3>Фотометр</h3>
+                            <p>Прибор для измерения светового потока или интенсивности света.</p>
+                            <div class="instrument-usage">
+                                <h4>Применение:</h4>
+                                <ul>
+                                    <li>Фотография</li>
+                                    <li>Астрономия</li>
+                                    <li>Осветительная техника</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Термодинамика -->
+            <div class="instrument-section" id="thermodynamics">
+                <h2>Термодинамика</h2>
+                <div class="instrument-grid">
+                    <div class="instrument-card">
+                        <div class="instrument-image">
+                            <img src="images/калориметр.jpg" alt="Калориметр">
+                        </div>
+                        <div class="instrument-info">
+                            <h3>Калориметр</h3>
+                            <p>Прибор для измерения количества теплоты.</p>
+                            <div class="instrument-usage">
+                                <h4>Применение:</h4>
+                                <ul>
+                                    <li>Химические реакции</li>
+                                    <li>Биологические процессы</li>
+                                    <li>Исследование материалов</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="instrument-card">
+                        <div class="instrument-image">
+                            <img src="images/термометр.jpg" alt="Термометр">
+                        </div>
+                        <div class="instrument-info">
+                            <h3>Термометр</h3>
+                            <p>Прибор для измерения температуры.</p>
+                            <div class="instrument-usage">
+                                <h4>Применение:</h4>
+                                <ul>
+                                    <li>Метеорология</li>
+                                    <li>Медицина</li>
+                                    <li>Промышленность</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ядерная физика -->
+            <div class="instrument-section" id="nuclear">
+                <h2>Ядерная физика</h2>
+                <div class="instrument-grid">
+                    <div class="instrument-card">
+                        <div class="instrument-image">
+                            <img src="images/дозиметр.jpg" alt="Дозиметр">
+                        </div>
+                        <div class="instrument-info">
+                            <h3>Дозиметр</h3>
+                            <p>Прибор для измерения дозы ионизирующего излучения.</p>
+                            <div class="instrument-usage">
+                                <h4>Применение:</h4>
+                                <ul>
+                                    <li>Радиационный контроль</li>
+                                    <li>Медицина</li>
+                                    <li>Атомная энергетика</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>О проекте</h3>
+                    <p>Образовательный сайт по физике, созданный для студентов и всех, кто интересуется наукой.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Быстрые ссылки</h3>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="scientists.html">Учёные</a></li>
+                        <li><a href="formulas.html">Формулы</a></li>
+                        <li><a href="terms.html">Термины</a></li>
+                        <li><a href="graphs.html">Графики</a></li>
+                        <li><a href="instruments.html">Приборы</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p>email: kvotter513@mail.ru</p>
+                    <div class="social-icons">
+                        <a href="https://t.me/c4tcvt" target="_blank"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Physics. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Поиск по приборам
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('searchInput');
+            const instrumentCards = document.querySelectorAll('.instrument-card');
+            const noResults = document.getElementById('noResults');
+            const instrumentSections = document.querySelectorAll('.instrument-section');
+            
+            // Быстрая навигация
+            document.querySelectorAll('.quick-nav-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const sectionId = this.getAttribute('data-section');
+                    document.getElementById(sectionId).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Функция поиска
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                let hasResults = false;
+                
+                // Сначала скрываем все приборы
+                instrumentCards.forEach(card => {
+                    card.style.display = 'none';
+                    card.classList.remove('highlight');
+                });
+                
+                // Показываем только соответствующие поиску
+                instrumentCards.forEach(card => {
+                    const title = card.querySelector('h3').textContent.toLowerCase();
+                    const description = card.querySelector('p').textContent.toLowerCase();
+                    const usage = card.querySelector('.instrument-usage').textContent.toLowerCase();
+                    
+                    if (title.includes(searchTerm) || description.includes(searchTerm) || usage.includes(searchTerm)) {
+                        card.style.display = 'flex';
+                        card.classList.add('highlight');
+                        hasResults = true;
+                        
+                        // Показываем родительский раздел
+                        const section = card.closest('.instrument-section');
+                        if (section) {
+                            section.style.display = 'block';
+                        }
+                    }
+                });
+                
+                // Показываем/скрываем сообщение "Ничего не найдено"
+                if (!hasResults && searchTerm.length > 0) {
+                    noResults.style.display = 'block';
+                    
+                    // Скрываем все разделы
+                    instrumentSections.forEach(section => {
+                        section.style.display = 'none';
+                    });
+                } else {
+                    noResults.style.display = 'none';
+                    
+                    // Показываем все разделы
+                    instrumentSections.forEach(section => {
+                        section.style.display = 'block';
+                    });
+                }
+                
+                // Если поле поиска пустое, показываем все приборы
+                if (searchTerm.length === 0) {
+                    instrumentCards.forEach(card => {
+                        card.style.display = 'flex';
+                        card.classList.remove('highlight');
+                    });
+                    
+                    noResults.style.display = 'none';
+                    
+                    // Показываем все разделы
+                    instrumentSections.forEach(section => {
+                        section.style.display = 'block';
+                    });
+                }
+            });
+            
+            // Очистка поиска при клике на иконку
+            document.querySelector('.search-icon').addEventListener('click', function() {
+                if (searchInput.value.length > 0) {
+                    searchInput.value = '';
+                    searchInput.dispatchEvent(new Event('input'));
+                }
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Физика - Главная</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<!-- Кнопка "Наверх" -->
+<button id="backToTop" class="back-to-top" aria-label="Вернуться наверх">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-text">Физика</span>
+                <span class="logo-dot">.</span>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html" class="active">Главная</a></li>
+                    <li><a href="scientists.html">Учёные</a></li>
+                    <li><a href="formulas.html">Формулы</a></li>
+                    <li><a href="terms.html">Термины</a></li>
+                    <li><a href="graphs.html">Графики</a></li>
+                    <li><a href="instruments.html">Приборы</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title animate">Изучайте физику с нами</h1>
+            <p class="hero-subtitle animate" style="animation-delay: 0.2s;">Откройте для себя фундаментальные законы вселенной</p>
+            <a href="#content" class="btn animate" style="animation-delay: 0.4s;">Начать изучение</a>
+        </div>
+        <div class="hero-particles" id="particles-js"></div>
+    </section>
+
+    <section class="content" id="content">
+        <div class="container">
+            <h2 class="section-title">О науке физика</h2>
+            <p class="section-text">Физика — это наука о природе, изучающая наиболее общие и фундаментальные закономерности, определяющие структуру и эволюцию материального мира. Физика является одной из основных наук, и её законы лежат в основе всего естествознания.</p>
+            
+            <div class="features">
+                <div class="feature-card animate">
+                    <i class="fas fa-atom"></i>
+                    <h3>Механика</h3>
+                    <p>Изучает движение тел и взаимодействие между ними.</p>
+                </div>
+                <div class="feature-card animate" style="animation-delay: 0.2s;">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Электродинамика</h3>
+                    <p>Исследует электромагнитные явления и их свойства.</p>
+                </div>
+                <div class="feature-card animate" style="animation-delay: 0.4s;">
+                    <i class="fas fa-temperature-high"></i>
+                    <h3>Термодинамика</h3>
+                    <p>Изучает тепловые процессы и преобразование энергии.</p>
+                </div>
+                <div class="feature-card animate" style="animation-delay: 0.6s;">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Оптика</h3>
+                    <p>Исследует природу света и его взаимодействие с веществом.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="quote-section">
+        <div class="container">
+            <blockquote class="quote animate">
+                "Физика — это попытка понять фундаментальные законы природы. Чем больше мы понимаем, тем больше осознаём, как мало мы знаем."
+            </blockquote>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>О проекте</h3>
+                    <p>Образовательный сайт по физике, созданный для студентов и всех, кто интересуется наукой.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Быстрые ссылки</h3>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="scientists.html">Учёные</a></li>
+                        <li><a href="formulas.html">Формулы</a></li>
+                        <li><a href="terms.html">Термины</a></li>
+                        <li><a href="graphs.html">Графики</a></li>
+                        <li><a href="instruments.html">Приборы</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <p>email: kvotter513@mail.ru</p>
+                    <div class="social-icons">
+                        <a href="https://t.me/c4tcvt" target="_blank"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Physics. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
